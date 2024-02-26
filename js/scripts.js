@@ -1,13 +1,7 @@
 let pokemonList = [];
 
-
-
-
-alert('Hello world');
-let favoriteFood = 'pizza';
-document.write(favoriteFood);
-
-let name = 'John';
-let welcomeMessage1 = "Hello, I'm";
-let welcomeMessage2 = 'and I say to you: "Hello!"';
-console.log(welcomeMessage1 + ' ' + name + ' ' + welcomeMessage2);
+let pokemonList = [
+    {pokemon: 'Bulbasaur', height: '0.7', types: ['grass', 'poison']},
+    {pokemon: 'Charmander', height: '0.6', types: 'fire'},
+    {pokemon: 'Squirtle', height: '0.5', types: 'water'},
+]
