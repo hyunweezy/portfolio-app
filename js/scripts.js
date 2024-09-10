@@ -9,3 +9,13 @@ let pokemonList = [
     {name: 'Wartortle', height: '1.0', types: ['water']},
     {name: 'Blastoise', height: '1.6', types: ['water']},
 ]
+
+for (let i = 0; i < pokemonList.length; i++) {
+    if(pokemonList[i].height > 1.1){
+        document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')' + ' - Wow, that\'s big!</p>')
+    }
+    else{
+        document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')</p>')
+    }
+}
+
