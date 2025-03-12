@@ -1,5 +1,4 @@
-let pokemonRepository = (funtion(){
-    let pokemonList = [
+let pokemonList = [
         {name: 'Bulbasaur', height: '0.7', types: ['grass', 'poison']},
         {name: 'Ivysaur', height: '1.0', types: ['grass', 'poison']},
         {name: 'Venusaur', height: '2.0', types: ['grass', 'poison']},
@@ -11,47 +10,51 @@ let pokemonRepository = (funtion(){
         {name: 'Blastoise', height: '1.6', types: ['water']},
     ]
 
-    return {
-        add: function(pokemon) {
-            pokemonList.push(pokemon);
-        }
-        getAll: function() {
-            return pokemonList;
-        }
-    }
-})();
+pokemonList.forEach(function(pokemon) {
+    console.log(pokemon);
+});
 
-console.log(pokemonRepository.getAll());
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // secondary list for testing
 
-let pokemonList2 = //[
-    {name: 'Bulba', height: '0.7', types: ['grass', 'poison']};
-    // {name: 'Ivy', height: '1.0', types: ['grass', 'poison']},
-    // {name: 'Venu', height: '2.0', types: ['grass', 'poison']},
-    // {name: 'Charman', height: '0.6', types: ['fire']},
-    // {name: 'Charmel', height: '1.1', types: ['fire']},
-    // {name: 'Chariz', height: '1.7', types: ['fire', 'flying']},  
-    // {name: 'Squirt', height: '0.5', types: ['water']},
-    // {name: 'Wartort', height: '1.0', types: ['water']},
-    // {name: 'Blast', height: '1.6', types: ['water']},
+// let pokemonList2 = [
+//     {name: 'Bulba', height: '0.7', types: ['grass', 'poison']},
+//     {name: 'Ivy', height: '1.0', types: ['grass', 'poison']},
+//     {name: 'Venu', height: '2.0', types: ['grass', 'poison']},
+//     {name: 'Charman', height: '0.6', types: ['fire']},
+//     {name: 'Charmel', height: '1.1', types: ['fire']},
+//     {name: 'Chariz', height: '1.7', types: ['fire', 'flying']},  
+//     {name: 'Squirt', height: '0.5', types: ['water']},
+//     {name: 'Wartort', height: '1.0', types: ['water']},
+//     {name: 'Blast', height: '1.6', types: ['water']},
 // ]
 
 // improves composition of for loop (need to revise to accomodate objects vs strings)
 
-function getHeightDescription(height){
-    return height;
-}
-function getTypeDescription(types){
-    return types;
-}
-function getPokemonDescription(pokemon){
-    let heightDescription = getHeightDescription(pokemon.height);
-    let typeDescription = getTypeDescription(pokemon.types);
-    return pokemon.name + ', ' + heightDescription + ', ' + typeDescription;
-}
-console.log(getPokemonDescription(pokemonList2));
+// function getHeightDescription(height){
+//     return height;
+// }
+// function getTypeDescription(types){
+//     return types;
+// }
+// function getPokemonDescription(pokemon){
+//     let heightDescription = getHeightDescription(pokemon.height);
+//     let typeDescription = getTypeDescription(pokemon.types);
+//     return pokemon.name + ', ' + heightDescription + ', ' + typeDescription;
+// }
 
 // this is Object.keys() function that creates an array of all the keys in the object 
 // pokemonList. this only executes when array is in bracket notation.
@@ -71,7 +74,7 @@ console.log(getPokemonDescription(pokemonList2));
 // pokemonList.forEach(function(pokemon){
 //     if (pokemon.height > 1.1){
 //         sizeDescription = ' - Wow, that\'s big!';
-//         document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ')' + sizeDescription + '</p>')
+//         document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ')' + sizeDescription + '</xp>')
 //     } else {
 //         document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ')' + '</p>')
 //     }
@@ -90,4 +93,4 @@ console.log(getPokemonDescription(pokemonList2));
 //         }
 //     }
 // }
-// printArrayDetails(pokemonList);
+// printArrayDetails(pokemonList2);
