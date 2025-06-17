@@ -1,57 +1,65 @@
 let pokemonRepository = (function() {
-    let pokemonList = [
-            {name: 'Bulbasaur', height: '0.7', types: ['grass', 'poison']},
-            {name: 'Ivysaur', height: '1.0', types: ['grass', 'poison']},
-            {name: 'Venusaur', height: '2.0', types: ['grass', 'poison']},
-            {name: 'Charmander', height: '0.6', types: ['fire']},
-            {name: 'Charmeleon', height: '1.1', types: ['fire']},
-            {name: 'Charizard', height: '1.7', types: ['fire', 'flying']},
-            {name: 'Squirtle', height: '0.5', types: ['water']},
-            {name: 'Wartortle', height: '1.0', types: ['water']},
-            {name: 'Blastoise', height: '1.6', types: ['water']},
+    let repository = [
+            {name: 'Bulbasaur', height: 0.7, types: ['grass', 'poison']},
+            {name: 'Ivysaur', height: 1.0, types: ['grass', 'poison']},
+            {name: 'Venusaur', height: 2.0, types: ['grass', 'poison']},
+            {name: 'Charmander', height: 0.6, types: ['fire']},
+            {name: 'Charmeleon', height: 1.1, types: ['fire']},
+            {name: 'Charizard', height: 1.7, types: ['fire', 'flying']},
+            {name: 'Squirtle', height: 0.5, types: ['water']},
+            {name: 'Wartortle', height: 1.0, types: ['water']},
+            {name: 'Blastoise', height: 1.6, types: ['water']},
         ]
 
     function add(pokemon) {
-        if (typeof pokemon === 'object' && pokemon !== null) {
-            pokemonList.push(pokemon);
-        }
-        else {
-            console.log('Only objects can be added');
+        if (
+            typeof pokemon === 'object' && 
+            'name' in pokemon &&
+            'height' in pokemon &&
+            'types' in pokemon
+        ) {
+            repository.push(pokemon);
+        } else {
+            console.log('Pokemon is not correct');
         }
     }
 
     function getAll() {
-        return pokemonList;
+        return repository;
+    }
+
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listPokemon = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('button-class');
+        listPokemon.appendChild(button);
+        pokemonList.appendChild(listPokemon);
+        button.addEventListener('click', function() {
+            showDetails(pokemon);
+        });
+    }
+
+    function showDetails(pokemon) {
+        console.log(pokemon.name)
     }
 
     return{
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem,
     };
 
-})();
+})();   
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-    console.log(pokemon.name + " height: " + pokemon.height + " types: " + pokemon.types)
+pokemonRepository.add({name: 'Pikachu', height: 0.3, types: ['electric']});
+
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function(pokemon){
+    pokemonRepository.addListItem(pokemon);
 });
-
-// pokemonRepository.Object.keys(pokemonList).getAll().forEach(function(pokemon) {
-//         console.log();
-//     });
-
-// adds Pikachu to pokemonList
-
-// console.log(pokemonRepository.getAll());
-// pokemonRepository.add({name: 'Pikachu'});
-// console.log(pokemonRepository.getAll());
-
-
-
-
-
-
-
-
 
 // secondary list for testing
 
